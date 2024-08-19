@@ -30,7 +30,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
-import dev.lennartegb.mongotodo.data.Todo
+import dev.lennartegb.data.Todo
 import dev.lennartegb.mongotodo.ui.theme.MongoToDoTheme
 import dev.lennartegb.mongotodo.viewmodel.TodoViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -101,7 +101,7 @@ private fun TodoScaffold(
 private fun TodoItem(todo: Todo, onRemove: () -> Unit, modifier: Modifier = Modifier) {
     ListItem(
         modifier = modifier,
-        headlineContent = { Text(text = todo.value) },
+        headlineContent = { Text(text = todo.task) },
         trailingContent = {
             IconButton(onClick = onRemove) {
                 Icon(imageVector = Icons.Default.Clear, contentDescription = null)
