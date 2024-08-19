@@ -22,4 +22,10 @@ class TodoViewModel(private val repository: ToDoRepository) : ViewModel() {
             repository.remove(todo)
         }
     }
+
+    fun deleteAll() {
+        viewModelScope.launch {
+            repository.clear()
+        }
+    }
 }

@@ -1,8 +1,14 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    // alias(libs.plugins.compose.compiler)
     alias(libs.plugins.realm)
+}
+
+kotlin {
+    compilerOptions {
+        freeCompilerArgs.add("-opt-in=androidx.compose.material3.ExperimentalMaterial3Api")
+        freeCompilerArgs.add("-opt-in=androidx.compose.foundation.ExperimentalFoundationApi")
+    }
 }
 
 android {
