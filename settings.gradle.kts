@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Mongo ToDo"
 include(":app")
- 
+include(":data")
