@@ -4,8 +4,8 @@ import io.realm.kotlin.types.RealmObject
 import io.realm.kotlin.types.annotations.PrimaryKey
 import org.mongodb.kbson.ObjectId
 
-data class Todo(
+class Todo : RealmObject {
     @PrimaryKey
-    val id: ObjectId = ObjectId(),
-    val value: String,
-) : RealmObject
+    var id: ObjectId = ObjectId()
+    var value: String = ""
+}

@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.compose.compiler)
+    // alias(libs.plugins.compose.compiler)
     alias(libs.plugins.realm)
 }
 
@@ -38,6 +38,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.14"
+    }
     buildFeatures {
         compose = true
     }
@@ -61,6 +64,9 @@ dependencies {
 
     implementation(libs.realm)
     implementation(libs.kotlin.coroutines)
+
+    implementation(platform(libs.koin.bom))
+    implementation(libs.bundles.koin)
 
     testImplementation(libs.junit)
 

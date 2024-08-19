@@ -1,6 +1,6 @@
 [versions]
 agp = "8.5.2"
-kotlin = "2.0.10"
+kotlin = "1.9.24"
 kotlin-coroutines = "1.8.1"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -10,6 +10,7 @@ lifecycleRuntimeKtx = "2.8.4"
 activityCompose = "1.9.1"
 composeBom = "2024.06.00"
 realm = "1.16.0"
+koin-bom = "4.0.0-RC1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -30,6 +31,13 @@ compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 kotlin-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }
 
 realm = { group = "io.realm.kotlin", name = "library-base", version.ref = "realm" }
+
+koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin-bom" }
+koin-core = { module = "io.insert-koin:koin-core" }
+koin-android = { module = "io.insert-koin:koin-android" }
+
+[bundles]
+koin = ["koin-core", "koin-android"]
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
